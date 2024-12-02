@@ -3,84 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gráfico Canvas</title>
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <canvas id="miCanvas" width="550" height="350"></canvas>
     <script type="text/javascript">
         function dibujarCanvas() {
-            var canvas = document.getElementById('miCanvas');
-            var contexto = canvas.getContext('2d');
+            let canvas = document.getElementById('miCanvas');
+            let ctx = canvas.getContext('2d');
 
-            // Fondo gradiente para el cielo
-            var gradienteCielo = contexto.createLinearGradient(0, 0, 0, canvas.height * 2 / 3);
-            gradienteCielo.addColorStop(0, '#87CEFA'); // Cielo azul
-            gradienteCielo.addColorStop(1, '#B0E0E6'); // Cielo más claro
-            contexto.fillStyle = gradienteCielo;
-            contexto.fillRect(0, 0, canvas.width, canvas.height * 2 / 3);
+            // Dibujamos el cielo con su gradiente
+            let gradienteCielo = ctx.createLinearGradient(0, 0, 0, canvas.height * 2 / 3);
+            gradienteCielo.addColorStop(0, '#87CEFA');
+            gradienteCielo.addColorStop(1, '#B0E0E6');
+            ctx.fillStyle = gradienteCielo;
+            ctx.fillRect(0, 0, canvas.width, canvas.height * 2 / 3);
 
-            // Fondo gradiente para el suelo
-            var gradienteSuelo = contexto.createLinearGradient(0, canvas.height * 2 / 3, 0, canvas.height);
-            gradienteSuelo.addColorStop(0, '#228B22'); // Verde intenso
-            gradienteSuelo.addColorStop(1, '#2E8B57'); // Verde más oscuro
-            contexto.fillStyle = gradienteSuelo;
-            contexto.fillRect(0, canvas.height * 2 / 3, canvas.width, canvas.height / 3);
+            // Dibujamos el suelo tambien con su gradiente
+            let gradienteSuelo = ctx.createLinearGradient(0, canvas.height * 2 / 3, 0, canvas.height);
+            gradienteSuelo.addColorStop(0, '#228B22');
+            gradienteSuelo.addColorStop(1, '#2E8B57');
+            ctx.fillStyle = gradienteSuelo;
+            ctx.fillRect(0, canvas.height * 2 / 3, canvas.width, canvas.height / 3);
 
-            // Montañas con gradientes más pronunciados
-            var colorBaseMontana = '#8B4513'; // Color base para el gradiente
+            // Dibujamos la montaña de la izauierda
+            let gradienteMontana1 = ctx.createLinearGradient(0, canvas.height * 2 / 3, 0, 100);
+            gradienteMontana1.addColorStop(0, '#8B4513');
+            gradienteMontana1.addColorStop(1, '#D2691E');
+            // Colocamos donde queremos que esté la montaña(Siendo elmismo metodo en las tres)
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height * 2 / 3);
+            ctx.lineTo(95, 120);
+            ctx.lineTo(175, canvas.height * 2 / 3);
+            ctx.closePath();
+            ctx.fillStyle = gradienteMontana1;
+            ctx.fill();
 
-            // Montaña 1 (izquierda)
-            var gradienteMontana1 = contexto.createLinearGradient(0, canvas.height * 2 / 3, 0, 100);
-            gradienteMontana1.addColorStop(0, '#8B4513'); // Base marrón oscuro
-            gradienteMontana1.addColorStop(1, '#D2691E'); // Pico marrón claro
-            contexto.beginPath();
-            contexto.moveTo(0, canvas.height * 2 / 3); 
-            contexto.lineTo(95, 120); 
-            contexto.lineTo(175, canvas.height * 2 / 3); 
-            contexto.closePath();
-            contexto.fillStyle = gradienteMontana1;
-            contexto.fill();
+            // Dibujamos la montaña del centro
+            let gradienteMontana2 = ctx.createLinearGradient(95, canvas.height * 2 / 3, 95, 100);
+            gradienteMontana2.addColorStop(0, '#8B4513');
+            gradienteMontana2.addColorStop(1, '#D2691E');
+            ctx.beginPath();
+            ctx.moveTo(95, canvas.height * 2 / 3);
+            ctx.lineTo(244, 105);
+            ctx.lineTo(2 * canvas.width / 3, canvas.height * 2 / 3);
+            ctx.closePath();
+            ctx.fillStyle = gradienteMontana2;
+            ctx.fill();
 
-            // Montaña 2 (centro)
-            var gradienteMontana2 = contexto.createLinearGradient(95, canvas.height * 2 / 3, 95, 100);
-            gradienteMontana2.addColorStop(0, '#8B4513'); // Base marrón oscuro
-            gradienteMontana2.addColorStop(1, '#D2691E'); // Pico marrón claro
-            contexto.beginPath();
-            contexto.moveTo(95, canvas.height * 2 / 3); 
-            contexto.lineTo(244, 105); 
-            contexto.lineTo(2 * canvas.width / 3, canvas.height * 2 / 3); 
-            contexto.closePath();
-            contexto.fillStyle = gradienteMontana2;
-            contexto.fill();
+            // Dibujamos la montaña de la derecha
+            let gradienteMontana3 = ctx.createLinearGradient(280, canvas.height * 2 / 3, 280, 70);
+            gradienteMontana3.addColorStop(0, '#8B4513');
+            gradienteMontana3.addColorStop(1, '#D2691E');
+            ctx.beginPath();
+            ctx.moveTo(280, canvas.height * 2 / 3);
+            ctx.lineTo(canvas.width, canvas.height * 2 / 3);
+            ctx.lineTo(3 * canvas.width / 4, 70);
+            ctx.closePath();
+            ctx.fillStyle = gradienteMontana3;
+            ctx.fill();
 
-            // Montaña 3 (derecha)
-            var gradienteMontana3 = contexto.createLinearGradient(280, canvas.height * 2 / 3, 280, 70);
-            gradienteMontana3.addColorStop(0, '#8B4513'); // Base marrón oscuro
-            gradienteMontana3.addColorStop(1, '#D2691E'); // Pico marrón claro
-            contexto.beginPath();
-            contexto.moveTo(280, canvas.height * 2 / 3); 
-            contexto.lineTo(canvas.width, canvas.height * 2 / 3); 
-            contexto.lineTo(3 * canvas.width / 4, 70); 
-            contexto.closePath();
-            contexto.fillStyle = gradienteMontana3;
-            contexto.fill();
+            // Dibujamos la nube utilizando las curvas de bezier
+            let gradienteNube = ctx.createRadialGradient(350, 120, 50, 350, 120, 150);
+            gradienteNube.addColorStop(0, 'blue');
+            gradienteNube.addColorStop(1, 'white');
+            ctx.beginPath();
+            // Movemos la montaña donde queramos
+            ctx.moveTo(320, 110);
+            // Ajustamos las curvas para darle forma de nube
+            ctx.bezierCurveTo(220, 95, 350, 25, 405, 100);
+            ctx.bezierCurveTo(500, 130, 500, 150, 330, 150);
+            ctx.bezierCurveTo(255, 150, 210, 140, 320, 100);
+            ctx.closePath();
+            ctx.fillStyle = gradienteNube;
+            ctx.fill();
 
-            // Nube más grande con gradiente de fuera hacia adentro
-            var gradienteNube = contexto.createRadialGradient(350, 120, 50, 350, 120, 150); // Nube aún más grande
-            gradienteNube.addColorStop(0, 'blue'); // Azul en los bordes
-            gradienteNube.addColorStop(1, 'white'); // Blanco en el centro
+            // Dibujamos las gotas de lluvia
+            for (let y = 160; y <= 300; y += 50) {
+                for (let x = 300; x <= 400; x += 20) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, y);
+                    ctx.lineTo(x + 10, y + 15);
+                    ctx.strokeStyle = 'blue';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+                }
+            }
 
-            contexto.beginPath();
-            contexto.moveTo(320, 110); // Mover la nube más abajo y a la izquierda
-            // Curvas Bezier para crear la forma de la nube
-            contexto.bezierCurveTo(290, 90, 350, 90, 360, 110); // Curva superior
-            contexto.bezierCurveTo(400, 130, 370, 150, 330, 140); // Curva inferior
-            contexto.bezierCurveTo(300, 150, 280, 130, 320, 110); // Curva inferior
-            contexto.closePath();
-
-            contexto.fillStyle = gradienteNube;
-            contexto.fill();
+            // Dibujamos el texto arriba a la izquierda
+            ctx.font = "bold 30px Arial";
+            ctx.fillStyle = "yellow";
+            ctx.fillText("Canvas", 20, 40);
         }
+        dibujarCanvas();
     </script>
-</head>
-<body onLoad="dibujarCanvas();">
-    <canvas id="miCanvas" width="550" height="350">Tu navegador no soporta Canvas.</canvas>
 </body>
 </html>
