@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio pagina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #004d40;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+        }
+
+        video,
+        audio,
+        embed,
+        iframe {
+            display: block;
+            margin: 1rem auto;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section.anuncio {
+            background-color: #80deea;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Curiosidades del Mar</h1>
+    </header>
+
+    <section>
+        <h2>Video</h2>
+        <p>El mar considerado de forma genérica como el conjunto de los mares y océanos, también llamado océano mundial
+            o simplemente el océano, es el cuerpo de agua salada interconectada que cubre más del 70% de la superficie
+            de la Tierra (361 132 000 km², con un volumen total de aproximadamente 1 332 000 000 km³).Modera el clima
+            del Planeta y tiene papeles importantes en los ciclos del agua, del carbono y del nitrógeno. Se ha viajado y
+            explorado desde la Antigüedad, mientras que el estudio científico del mar, la oceanografía, se remonta a los
+            viajes del capitán James Cook para explorar el océano Pacífico entre 1768 y 1779</p>
+        <video width="320" height="240" controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section>
+        <h2>Audio</h2>
+        <p>Aquí uno de los audios que se pueden escuchar en el mar</p>
+        <audio controls>
+            <source src="audio.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <section>
+        <h2>Plug-ins</h2>
+        <p>Algunos de los animales que viven en nuestro mar, mira que bonito!</p>
+        <embed src="animalito.webp" width="350" height="225">
+    </section>
+
+    <section class="anuncio">
+        <h2>Publicidad</h2>
+        <p>Mira el nuevo anuncio de H&S!!!!</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/znUlpvKPnOs?si=v1jtRRsLreO4O46U"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+</body>
+
+</html>
