@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<style>
+    body{
+        background-color: rgb(105, 56, 112);
+    }
+</style>
+
+<body>
+
+    <div class="container-fluid bg-dark text-white text-center py-3">
+        <h1>Ejercicio Bootstrap</h1>
+    </div>
+
+    <div class="bg-primary text-white p-2 text-center">
+        <h2>Información general</h2>
+    </div>
+
+    <div class="container mt-4">
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+                <div class="bg-light text-dark p-3 rounded">
+                    <h2>Nuestras Instalaciones</h2>
+                    <div class="d-flex justify-content-center gap-3">
+                        <img class="rounded" src="auto1.webp" alt="Instalación 1" width="240" height="200">
+                        <img class="rounded-circle" src="auto2.webp" alt="Instalación 2" width="240" height="200">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bg-dark text-white p-3 rounded">
+                    <h2>Lista de Empleados</h2>
+                    <p>Nuestros trabajadores con sus contactos</p>
+                    <table class="table table-light table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Antonio</td>
+                                <td>Lopez</td>
+                                <td>AntonioLopez@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Luis</td>
+                                <td>Garcia</td>
+                                <td>LuisGarcia@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Marisa</td>
+                                <td>Gonzalez</td>
+                                <td>MarisaGonzalez@gmail.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bg-success text-white p-3 rounded text-center">
+                    <h2>Marcas Asociadas</h2>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary">Peugeot</button>
+                        <button type="button" class="btn btn-primary">Seat</button>
+                        <button type="button" class="btn btn-primary">Hyundai</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bg-light text-dark p-3 rounded">
+                    <p>Visita nuestra <mark>autoescuela express</mark>, ofrecemos <kbd>cursos teoricos</kbd> con los mejores profesores por el mejor precio de la ciudad. Tambien puedes optar por nuestros <kbd>cursos intensivos</kbd> en los que en 7 días aseguramos que apruebes el examen teórico, junto a esto tenemos a los mejores profesores en la <kbd>parte practica</kbd> con <mark>coches totalmente renovados</mark>.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="alert alert-success">
+                    <p>Puedes consultar más información <a href="https://superexpress.es/" class="alert-link">en esta página</a></p>
+                </div>
+            </div>
+
+            <!-- Mitad -->
+            <div class="col-12">
+                <div class="bg-secondary text-white p-5 rounded text-center">
+                    <h2>Apartado para estudiantes</h2>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bg-danger text-white p-3 rounded text-center">
+                    <h2>Test</h2>
+                    <p>Cargando test...</p>
+                    <div class="spinner-border"></div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bg-dark text-white p-3 rounded">
+                    <h2>Test disponibles</h2>
+                    <p>Test teóricos por hacer: <span class="badge bg-danger">95</span></p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bg-warning text-white p-3 rounded">
+                    <h2>Calendario</h2>
+                    <p>Fecha del examen más cercano:</p>
+                    <div class="row">
+                        <div class="col-sm-4 bg-success">Día</div>
+                        <div class="col-sm-8 bg-success">Hora</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 bg-primary">Jueves 15</div>
+                        <div class="col-sm-8 bg-info">5 y media de la tarde</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bg-info text-white p-3 rounded text-center">
+                    <h2>Plazas</h2>
+                    <p>Plazas ocupadas para el siguiente examen:</p>
+                    <div class="progress">
+                        <div class="progress-bar-animated progress-bar-striped bg-danger" style="width: 75%;">3 de 4 plazas ocupadas</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="bg-light text-dark p-3 rounded text-center">
+                    <h2>Progreso</h2>
+                    <p>Que parte estas haciendo ahora mismo</p>
+                    <ul class="list-group">
+                        <li class="list-group-item active">Parte teórica</li>
+                        <li class="list-group-item">Parte práctica</li>
+                        <li class="list-group-item">Examen</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="bg-dark text-white p-3">
+        <p>Aunque la segunda página sigue en desarrollo, puedes visitarla igualmente:</p>
+        <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="PaginaBS.html">Anterior</a></li>
+            <li class="page-item"><a class="page-link" href="PaginaBS.html">1</a></li>
+            <li class="page-item"><a class="page-link" href="PagSecundaria.html">2</a></li>
+            <li class="page-item"><a class="page-link" href="PagSecundaria.html">Siguiente</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
